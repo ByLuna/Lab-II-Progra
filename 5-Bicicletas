@@ -1,0 +1,40 @@
+"""
+Una tienda de bicicletas vende diferentes tipos de bicicletas (de montaña, de carretera, híbridas).
+ Todas las bicicletas son de la marca "Cyclo", que es una marca reconocida en el mercado.
+El precio de venta de cada bicicleta es igual al precio de compra multiplicado por 1.5,
+lo que corresponde al margen de ganancia. La tienda requiere un programa que le permita registrar y visualizar
+las 5 principales características de las bicicletas que vende. """
+
+class Bicicleta:
+    def __init__(self):
+        self.tipo = input("Ingrese el tipo de bicicleta (Montaña/Carretera/Híbrida): ")
+        self.modelo = input("Ingrese el modelo de la bicicleta: ")
+        self.tamano_cuadro = input("Ingrese el tamaño del cuadro (e.g., 18 pulgadas): ")
+        self.velocidades = input("Ingrese el número de velocidades: ")
+        self.color = input("Ingrese el color de la bicicleta: ")
+        self.precio_compra = float(input("Ingrese el precio de compra de la bicicleta: "))
+        self.marca = "Cyclo"  
+        self.precio_venta = self.calcular_precio_venta()
+
+    def calcular_precio_venta(self):
+        return self.precio_compra * 1.5
+
+    def mostrar_datos(self):
+        print("\nCaracterísticas de la bicicleta:")
+        print(f"Tipo: {self.tipo}")
+        print(f"Modelo: {self.modelo}")
+        print(f"Tamaño del Cuadro: {self.tamano_cuadro}")
+        print(f"Número de Velocidades: {self.velocidades}")
+        print(f"Color: {self.color}")
+        print(f"Marca: {self.marca}")
+        print(f"Precio de Compra: ${self.precio_compra:.2f}")
+        print(f"Precio de Venta: ${self.precio_venta:.2f}")
+
+
+print("Registro de la primera bicicleta:")
+bicicleta1 = Bicicleta()
+bicicleta1.mostrar_datos()
+
+print("\nRegistro de la segunda bicicleta:")
+bicicleta2 = Bicicleta()
+bicicleta2.mostrar_datos()
